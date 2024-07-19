@@ -1,0 +1,135 @@
+﻿<Page x:Class="tUNO.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:tUNO"
+      xmlns:controls="using:tUNO.Controls"
+      xmlns:automation="http://schemas.microsoft.com/winfx/2006/xaml/presentation/automation"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+      
+      <Grid x:Name="MainGrid">
+            <Grid.RowDefinitions>
+                  <RowDefinition Height="25" />
+                  <RowDefinition Height="15" />
+                  <RowDefinition Height="215" />
+                  <RowDefinition Height="25" />
+                  <RowDefinition Height="15" />
+                  <RowDefinition Height="115" />
+                  <RowDefinition Height="25" />
+                  <RowDefinition Height="15" />
+            </Grid.RowDefinitions>
+    <TextBlock
+                  Grid.Row="0"
+                  Text="ADVICE"
+                  FontSize="16"
+                  Foreground="Red"
+                  TextDecorations="Underline"
+                  HorizontalTextAlignment="Center" />
+    <Grid x:Name="HoldZone" Grid.Row="2">
+                  <Grid.RowDefinitions>
+                  <RowDefinition Height="20" />
+                  <RowDefinition Height="35" />
+                  <RowDefinition Height="35" />
+                  <RowDefinition Height="35" />
+                  <RowDefinition Height="35" />
+                  <RowDefinition Height="50" />
+                  </Grid.RowDefinitions>
+                  <TextBlock
+                  Grid.Row="0"
+                  Text="HZ Calc"
+                  FontSize="14"
+                  Foreground="Blue"
+                  TextDecorations="Underline"
+                  HorizontalTextAlignment="Center" />
+                  <Grid Grid.Row="1">
+                  <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Grid.Column="0" Text="Portfolio Control: " HorizontalTextAlignment="End" VerticalAlignment="Center" />
+                  <controls:MyEntry x:Name="PC" PlaceholderText="Enter Portfolio Control" Grid.Column="1" HorizontalTextAlignment="Start"  VerticalAlignment="Center" />
+                  </Grid>
+                  <Grid Grid.Row="2">
+                  <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Grid.Column="0" Text="Number of Shares: " HorizontalTextAlignment="End" VerticalAlignment="Center" />
+                  <controls:MyEntry x:Name="NS" PlaceholderText="Enter Number of Shares" Grid.Column="1"  HorizontalTextAlignment="Start"  VerticalAlignment="Center" />
+                  </Grid>
+                  <Grid Grid.Row="3">
+                  <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Grid.Column="0" Text="Sell SAFE: " HorizontalTextAlignment="End" VerticalAlignment="Center" />
+                  <controls:MyEntry x:Name="SS" PlaceholderText="Enter Sell SAFE" Grid.Column="1" HorizontalTextAlignment="Start" VerticalAlignment="Center" />
+                  </Grid>
+                  <Grid Grid.Row="4">
+                  <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Grid.Column="0" Text="Buy SAFE: " HorizontalTextAlignment="End" VerticalAlignment="Center" />
+                  <controls:MyEntry x:Name="BS" PlaceholderText="Enter Buy SAFE" Grid.Column="1" HorizontalTextAlignment="Start"  VerticalAlignment="Center" />
+                  </Grid>
+                  <Grid Grid.Row="5">
+                  <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Grid.Column="0" Text="Minimum Purchase &#10; % Of Stock Shares: " HorizontalTextAlignment="Start"  VerticalAlignment="Center" />
+                  <controls:MyEntry x:Name="MP" PlaceholderText="Enter Minimum Purchase" Grid.Column="1" HorizontalTextAlignment="Start"  VerticalAlignment="Center" />
+                  </Grid>
+            </Grid>
+    <Button
+                  Grid.Row="3"
+                  x:Name="CalcHZBtn"
+                  Content="CalcHZBtn"
+                  Background="Gray"
+                  Foreground="Black"
+                  Click="OnHZClicked"
+                  Height="35"
+                  HorizontalContentAlignment="Center" />
+
+    <Grid x:Name="MO" Grid.Row="5">
+                  <Grid.RowDefinitions>
+                  <RowDefinition Height="20" />
+                  <RowDefinition Height="35" />
+                  <RowDefinition Height="35" />
+                  </Grid.RowDefinitions>
+                  <TextBlock
+                  Grid.Row="0"
+                  Text="MO Calc"
+                  FontSize="14"
+                  Foreground="Blue"
+                  TextDecorations="Underline"
+                  HorizontalTextAlignment="Center" />
+                  <Grid Grid.Row="1">
+                  <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Grid.Column="0" Text="P: " HorizontalTextAlignment="End" VerticalAlignment="Center" />
+                  <controls:MyEntry x:Name="P" PlaceholderText="Enter P" Grid.Column="1" HorizontalTextAlignment="Start" VerticalAlignment="Center" />
+                  </Grid>
+                  <Grid Grid.Row="2">
+                  <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Grid.Column="0" Text="SV: " HorizontalTextAlignment="End" VerticalAlignment="Center" />
+                  <controls:MyEntry x:Name="SV" PlaceholderText="Enter SV" Grid.Column="1"  HorizontalTextAlignment="Start" VerticalAlignment="Center" />
+                  </Grid>
+            </Grid>
+    <Button
+                  Grid.Row="6"
+                  x:Name="CalcMOBtn"
+                  Content="Calc MOBTN"
+                  Background="Gray"
+                  Foreground="Black"
+                  Click="OnMOClicked"
+                  Height="35"
+                  HorizontalContentAlignment="Center" />
+
+  </Grid>
+</Page>

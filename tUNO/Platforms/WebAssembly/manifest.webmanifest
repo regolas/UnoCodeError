@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "tUNO",
+  "display": "standalone",
+  "name": "tUNO",
+  "short_name": "tUNO",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
